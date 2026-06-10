@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Futuro Azul - Uso consciente da água no agro</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Botão flutuante de acessibilidade -->
+    <div class="botao-acessibilidade" id="botaoAcessibilidade">
+        <button id="btnAcessibilidade" aria-label="Menu de acessibilidade">♿ Acessibilidade</button>
+        <div class="painel-acessibilidade" id="painelAcessibilidade">
+            <button id="aumentarFonte" aria-label="Aumentar fonte">A+</button>
+            <button id="diminuirFonte" aria-label="Diminuir fonte">A-</button>
+            <button id="altoContraste" aria-label="Ativar alto contraste">◐ Alto contraste</button>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1>💧 Futuro Azul</h1>
+            <p class="subtitulo">Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+            <!-- Menu de navegação simples -->
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#problemas">Problemas</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#dicas">Gerador de Dicas</a></li>
+                    <li><a href="#conclusao">Conclusão</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Seção 1: Início -->
+        <section id="inicio" class="secao">
+            <div class="container">
+                <h2>🌾 Água que alimenta o futuro</h2>
+                <p>A agricultura é essencial para a vida, mas o <strong>desperdício de água</strong> compromete o meio ambiente e as próximas gerações. O projeto <strong>Futuro Azul</strong> traz informações e dicas práticas para produzir alimentos de forma sustentável.</p>
+                <img src="https://via.placeholder.com/800x300?text=Imagem+Ilustrativa:+Agricultura+e+Água" alt="Ilustração de plantação com gotas d'água" class="imagem-ilustrativa">
+                <p><small>* Insira aqui uma fotografia própria ou ilustração sobre o tema.</small></p>
+            </div>
+        </section>
+
+        <!-- Seção 2: Problemas do desperdício de água -->
+        <section id="problemas" class="secao fundo-claro">
+            <div class="container">
+                <h2>⚠️ Problemas do desperdício de água na agricultura</h2>
+                <p>O uso ineficiente da água no campo gera sérios impactos:</p>
+                <ul>
+                    <li>💧 <strong>Escassez hídrica</strong>: rios e aquíferos diminuem, afetando comunidades inteiras.</li>
+                    <li>🌱 <strong>Degradação do solo</strong>: irrigação mal planejada causa salinização e erosão.</li>
+                    <li>🐟 <strong>Perda da biodiversidade</strong>: ecossistemas aquáticos morrem com a falta de água.</li>
+                    <li>📉 <strong>Aumento de custos</strong>: agricultores gastam mais para captar água cada vez mais longe.</li>
+                </ul>
+                <!-- Tabela conforme planejamento -->
+                <h3>Comparativo: Métodos Tradicionais vs. Sustentáveis</h3>
+                <table class="tabela-comparativa">
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Consumo de água</th>
+                            <th>Eficiência</th>
+                            <th>Impacto ambiental</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Irrigação por sulco (tradicional)</td><td>Alto</td><td>Baixa</td><td>Alto desperdício</td></tr>
+                        <tr><td>Gotejamento (sustentável)</td><td>Baixo</td><td>Alta</td><td>Baixo impacto</td></tr>
+                        <tr><td>Aspersão convencional</td><td>Médio/Alto</td><td>Média</td><td>Perda por evaporação</td></tr>
+                        <tr><td>Captação de água da chuva</td><td>Zero (água natural)</td><td>Muito alta</td><td>Positivo</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção 3: Soluções sustentáveis -->
+        <section id="solucoes" class="secao">
+            <div class="container">
+                <h2>🌿 Soluções sustentáveis para a agricultura</h2>
+                <p>Pequenas atitudes podem fazer a diferença:</p>
+                <div class="cards-solucoes">
+                    <article class="card">
+                        <h4>💧 Irrigação por gotejamento</h4>
+                        <p>Economiza até 60% de água comparada à irrigação tradicional.</p>
+                    </article>
+                    <article class="card">
+                        <h4>🌧️ Captação de água da chuva</h4>
+                        <p>Armazenar água em cisternas reduz a demanda sobre rios e lençóis freáticos.</p>
+                    </article>
+                    <article class="card">
+                        <h4>🌱 Plantio direto e cobertura do solo</h4>
+                        <p>Mantém a umidade do solo, diminuindo a necessidade de irrigação.</p>
+                    </article>
+                    <article class="card">
+                        <h4>📱 Monitoramento por sensores</h4>
+                        <p>Tecnologia que indica o momento exato de irrigar, evitando desperdícios.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Gerador de dicas sustentáveis (FUNCIONALIDADE PRINCIPAL) -->
+        <section id="dicas" class="secao fundo-claro">
+            <div class="container">
+                <h2>💡 Gerador de Dicas - Economize Água no Campo</h2>
+                <p>Clique no botão abaixo e receba uma dica diferente a cada vez!</p>
+                <div class="area-dica">
+                    <p id="textoDica">Clique em "Gerar dica" para começar 🌟</p>
+                    <button id="btnGerarDica" class="botao-dica">🔁 Gerar dica</button>
+                </div>
+                <p class="info-dica">As dicas são baseadas em práticas sustentáveis para agricultura e dia a dia.</p>
+            </div>
+        </section>
+
+        <!-- Seção 5: Conclusão e conscientização -->
+        <section id="conclusao" class="secao">
+            <div class="container">
+                <h2>🌎 Conclusão: água é vida, futuro é agora</h2>
+                <p>O equilíbrio entre produção agrícola e meio ambiente é possível. Quando cada pessoa – agricultor, estudante ou cidadão – faz sua parte, garantimos um <strong>futuro azul</strong> para todos. Use água com consciência, valorize práticas sustentáveis e compartilhe esse conhecimento!</p>
+                <p><em>"Agro forte, futuro sustentável: a água que economizamos hoje é a colheita de amanhã."</em></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>Projeto Futuro Azul - Concurso Agrinho 2026</p>
+            <p>Desenvolvido por Yasmin Piske de Carvalho | Turma: [Sua turma]</p>
+            <p>🌱 Uso consciente da água para um agro forte e sustentável.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
