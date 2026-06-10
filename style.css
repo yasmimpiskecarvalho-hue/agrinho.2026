@@ -1,1 +1,286 @@
+/* ========== RESET BÁSICO ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* ========== VARIÁVEIS (tema claro padrão) ========== */
+:root {
+    --cor-primaria: #0A5C6E;    /* azul escuro (água) */
+    --cor-secundaria: #2E7D32;  /* verde sustentabilidade */
+    --cor-fundo: #F0F7F0;       /* fundo bem claro */
+    --cor-texto: #1E2A2E;
+    --cor-card: #FFFFFF;
+    --cor-borda: #B2DFDB;
+    --fonte-padrao: 16px;
+}
+
+/* Modo alto contraste - será ativado via JS */
+.alto-contraste {
+    --cor-primaria: #000000;
+    --cor-secundaria: #FFFF00;
+    --cor-fundo: #000000;
+    --cor-texto: #FFFFFF;
+    --cor-card: #222222;
+    --cor-borda: #FFFF00;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--fonte-padrao);
+    line-height: 1.5;
+    transition: all 0.2s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== CABEÇALHO E NAVEGAÇÃO ========== */
+header {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    border-bottom-color: white;
+}
+
+/* ========== SEÇÕES ========== */
+.secao {
+    padding: 3rem 0;
+}
+
+.fundo-claro {
+    background-color: #E8F4F0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    border-left: 6px solid var(--cor-secundaria);
+    padding-left: 15px;
+}
+
+h3 {
+    margin: 1.5rem 0 0.8rem 0;
+    color: var(--cor-secundaria);
+}
+
+p, li {
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ========== TABELA ========== */
+.tabela-comparativa {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cor-card);
+    margin: 1rem 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabela-comparativa th,
+.tabela-comparativa td {
+    border: 1px solid var(--cor-borda);
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-comparativa th {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* ========== CARDS (Soluções) ========== */
+.cards-solucoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background-color: var(--cor-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    flex: 1 1 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--cor-secundaria);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    color: var(--cor-primaria);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* ========== GERADOR DE DICAS (funcionalidade principal) ========== */
+.area-dica {
+    background-color: var(--cor-card);
+    border-radius: 24px;
+    padding: 2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+#textoDica {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    min-height: 90px;
+}
+
+.botao-dica {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-dica:hover {
+    background-color: var(--cor-primaria);
+    transform: scale(1.02);
+}
+
+.info-dica {
+    font-size: 0.85rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* ========== BOTÃO DE ACESSIBILIDADE (fixo) ========== */
+.botao-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#btnAcessibilidade {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.painel-acessibilidade {
+    display: none;
+    flex-direction: column;
+    background-color: var(--cor-card);
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.painel-acessibilidade button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.painel-acessibilidade button:hover {
+    background-color: var(--cor-fundo);
+}
+
+/* ========== RODAPÉ ========== */
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+    .cards-solucoes {
+        flex-direction: column;
+    }
+    
+    .tabela-comparativa {
+        font-size: 0.85rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        gap: 0.8rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+.imagem-ilustrativa {
+    max-width: 100%;
+    border-radius: 16px;
+    margin: 1rem 0;
+}
