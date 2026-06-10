@@ -1,1 +1,98 @@
+// ========== FUNCIONALIDADES DE ACESSIBILIDADE ==========
 
+// 1. Painel de acessibilidade (mostrar/esconder)
+const btnAcessibilidade = document.getElementById('btnAcessibilidade');
+const painel = document.getElementById('painelAcessibilidade');
+
+btnAcessibilidade.addEventListener('click', () => {
+    // Se o painel estiver visível, esconde; senão, mostra
+    if (painel.style.display === 'flex') {
+        painel.style.display = 'none';
+    } else {
+        painel.style.display = 'flex';
+    }
+});
+
+// 2. Aumentar e diminuir fonte
+const aumentarBtn = document.getElementById('aumentarFonte');
+const diminuirBtn = document.getElementById('diminuirFonte');
+const root = document.documentElement;
+let tamanhoAtual = 16; // em pixels, igual ao valor padrão definido no CSS
+
+function atualizarFonte() {
+    root.style.setProperty('--fonte-padrao', tamanhoAtual + 'px');
+}
+
+aumentarBtn.addEventListener('click', () => {
+    if (tamanhoAtual < 26) { // limite máximo
+        tamanhoAtual += 2;
+        atualizarFonte();
+    }
+});
+
+diminuirBtn.addEventListener('click', () => {
+    if (tamanhoAtual > 12) { // limite mínimo
+        tamanhoAtual -= 2;
+        atualizarFonte();
+    }
+});
+
+// 3. Alto contraste
+const contrasteBtn = document.getElementById('altoContraste');
+let contrasteAtivo = false;
+
+contrasteBtn.addEventListener('click', () => {
+    if (!contrasteAtivo) {
+        document.body.classList.add('alto-contraste');
+        contrasteBtn.textContent = '◐ Modo normal';
+        contrasteAtivo = true;
+    } else {
+        document.body.classList.remove('alto-contraste');
+        contrasteBtn.textContent = '◐ Alto contraste';
+        contrasteAtivo = false;
+    }
+});
+
+// ========== FUNCIONALIDADE PRINCIPAL: GERADOR DE DICAS ==========
+// Tema: economia de água na agricultura e sustentabilidade
+
+const listaDicas = [
+    "💧 Utilize irrigação por gotejamento: ela reduz o desperdício em até 60% comparada à irrigação tradicional.",
+    "🌧️ Instale cisternas para captar água da chuva e use-a para irrigação em períodos de seca.",
+    "🌾 Plante espécies nativas e faça rotação de culturas: o solo fica mais úmido naturalmente.",
+    "📱 Monitore a umidade do solo com sensores simples – irrigue apenas quando necessário.",
+    "⏰ Regue nas primeiras horas da manhã ou ao final da tarde para evitar evaporação.",
+    "🧑‍🌾 Utilize cobertura morta (palha) no solo: reduz a perda de água e combate ervas daninhas.",
+    "🚿 Na propriedade rural, conserte vazamentos em canos e torneiras: cada gota conta!",
+    "🌱 Prefira adubos orgânicos, que retêm mais água no solo do que os químicos.",
+    "🐄 Se você cria animais, reutilize a água da lavagem dos estábulos para irrigar pastagens.",
+    "📚 Compartilhe conhecimento: ensine outras pessoas sobre o uso consciente da água!"
+];
+
+// Seleciona elementos do DOM
+const btnGerarDica = document.getElementById('btnGerarDica');
+const textoDica = document.getElementById('textoDica');
+
+// Função que exibe uma dica aleatória
+function exibirDicaAleatoria() {
+    const indiceAleatorio = Math.floor(Math.random() * listaDicas.length);
+    const dicaEscolhida = listaDicas[indiceAleatorio];
+    textoDica.textContent = dicaEscolhida;
+}
+
+// Adiciona evento ao botão
+btnGerarDica.addEventListener('click', exibirDicaAleatoria);
+
+// Opcional: ao carregar a página, já mostrar uma dica inicial
+exibirDicaAleatoria();
+
+// ========== PEQUENO DETALHE: FECHAR PAINEL DE ACESSIBILIDADE AO CLICAR FORA (BÔNUS) ==========
+// (não obrigatório, mas melhora a experiência)
+document.addEventListener('click', function(event) {
+    const isClickInsideBotao = btnAcessibilidade.contains(event.target);
+    const isClickInsidePainel = painel.contains(event.target);
+    
+    if (!isClickInsideBotao && !isClickInsidePainel && painel.style.display === 'flex') {
+        painel.style.display = 'none';
+    }
+});
